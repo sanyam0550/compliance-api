@@ -1,9 +1,10 @@
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import * as puppeteer from 'puppeteer';
+import { Browser } from 'puppeteer';
 
 @Injectable()
 export class ScraperService {
-  private browser; // Keep the browser instance open for reuse
+  private browser: Browser; // Keep the browser instance open for reuse
 
   constructor() {
     this.init(); // Initialize the browser when the service is created

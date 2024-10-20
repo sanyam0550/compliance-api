@@ -20,13 +20,8 @@ export class ComplianceService {
    * @returns A promise that resolves to a ComplianceReport.
    */
   async checkCompliance(webpageUrl: string, policyUrl: string): Promise<ComplianceReport> {
-    // Fetch the content of the webpage using ScraperService
     const webpageContent: string = await this.scraperService.getContent(webpageUrl);
-
-    // Fetch the content of the compliance policy using ScraperService
     const policyContent: string = await this.scraperService.getContent(policyUrl);
-
-    // Call LLMService to check the compliance of the webpage content against the policy content
     return this.llmService.checkCompliance(webpageContent, policyContent);
   }
 }

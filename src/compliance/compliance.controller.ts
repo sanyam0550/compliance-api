@@ -19,10 +19,7 @@ export class ComplianceController {
   @Post('validate')
   @HttpCode(200) // Set the status code to 200 OK instead of 201 Created
   async checkCompliance(@Body(new ValidationPipe()) checkComplianceDto: CheckComplianceDto) {
-    // Destructure the webpageUrl and policyUrl from the DTO
     const { webpageUrl, policyUrl } = checkComplianceDto;
-
-    // Pass the URLs to the service to check compliance and return the results
     return await this.complianceService.checkCompliance(webpageUrl, policyUrl);
   }
 }
