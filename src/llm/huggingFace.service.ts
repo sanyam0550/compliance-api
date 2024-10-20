@@ -42,6 +42,7 @@ export class HuggingFaceService implements LLMFactory {
   /**
    * Helper function to call the Hugging Face API for each chunk of sentences and retry if necessary.
    * It maps each sentence against the policy using a zero-shot classification model.
+   * As of now retry are hardcode to 3
    *
    * @param chunk - A chunk of sentences from the webpage content.
    * @param policyContent - The policy content to check the sentences against.
