@@ -87,7 +87,7 @@ export class HuggingFaceService implements LLMFactory {
           };
         });
       } catch (error) {
-        console.error({ error });
+        console.error({ message: 'Failed to call Hugging Face API', error });
         // Increment the retry attempt counter
         attempts += 1;
 
